@@ -34,6 +34,7 @@ public class AddPhone extends HttpServlet {
                     .withDescription(description)
                     .build());
             transaction.commit();
+            resp.sendRedirect("/list");
         }catch (Exception ex){
             if (transaction != null){
                 transaction.rollback();
